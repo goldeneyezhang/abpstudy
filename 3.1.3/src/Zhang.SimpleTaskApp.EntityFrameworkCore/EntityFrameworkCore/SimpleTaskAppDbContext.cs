@@ -9,6 +9,7 @@ namespace Zhang.SimpleTaskApp.EntityFrameworkCore
     {
 		//Add DbSet properties for your entities...
 		public DbSet<Task1> Tasks { get; set; }
+		public DbSet<Person> People { get; set; }
 		public SimpleTaskAppDbContext(DbContextOptions<SimpleTaskAppDbContext> options) 
             : base(options)
         {

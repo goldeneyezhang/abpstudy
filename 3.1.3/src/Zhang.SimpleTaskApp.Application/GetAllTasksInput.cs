@@ -15,6 +15,8 @@ namespace Zhang.SimpleTaskApp
 	[AutoMapFrom(typeof(Task1))]
 	public class TaskListDto:EntityDto,IHasCreationTime
 	{
+		public Guid? AssignedPersonId { get; set; }
+		public string AssignedPersonName { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
 		public DateTime CreationTime { get; set;}

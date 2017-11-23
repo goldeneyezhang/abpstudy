@@ -15,6 +15,15 @@ namespace Zhang.SimpleTaskApp.Tasks
 		public const int MaxTitleLength = 256;
 		public const int MaxDescriptionLength = 64 * 1024; //64KB
 
+		public Person AssignedPerson { get; set; }
+		public Guid? AssignedPersonId { get; set; }
+
+		public Task1(string title,string description=null,Guid? assignedPersonId = null):this()
+		{
+			Title = title;
+			Description = description;
+			AssignedPersonId = assignedPersonId;
+		}
 		[Required]
 		[MaxLength(MaxTitleLength)]
 		public string Title { get; set; }
@@ -32,12 +41,7 @@ namespace Zhang.SimpleTaskApp.Tasks
 			State = TaskState.Open;
 		}
 
-		public Task1(string title, string description = null)
-			: this()
-		{
-			Title = title;
-			Description = description;
-		}
+		
 	}
 
 	public enum TaskState : byte
